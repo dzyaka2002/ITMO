@@ -63,7 +63,7 @@ def generate_sample(name, postfix, dir):
         f.write('\n')
     f.close()
 
-for i in range(1,40):
+for i in range(1,20):
     generate_sample('circle', i, 'c:/python/1lab/train/')
     generate_sample('square', i, 'c:/python/1lab/train/')
     generate_sample('triangle', i, 'c:/python/1lab/train/')
