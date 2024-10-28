@@ -116,7 +116,7 @@ X_test, y_test = load_data('c:/python/1lab/test')
 
 hidden_neurons = [10]  # задаем количество скрытых слоев и количество нейронов в них
 learning_rate = 0.1 # скорость обучения
-epochs = 2000
+epochs = 1000
 
 # Обучение сети
 start_time = time.time()
@@ -124,8 +124,8 @@ tracemalloc.start()
 weights = train_neural_network(X_train, y_train, hidden_neurons, learning_rate, epochs)
 current, peak = tracemalloc.get_traced_memory()
 #Память для обучения сети
-print(f"Текущий размер памяти: {current / 10**6} МБ")
-print(f"Пиковый размер памяти: {peak / 10**6} МБ")
+print(f"Текущий размер памяти при обучении: {current / 10**6} МБ")
+print(f"Пиковый размер памяти при обучении: {peak / 10**6} МБ")
 tracemalloc.stop()
 end_time = time.time()
 
@@ -135,8 +135,8 @@ tracemalloc.start()
 output = predict(X_test, weights)
 current2, peak2 = tracemalloc.get_traced_memory()
 #Память для валидации
-print(f"Текущий размер памяти2: {current2 / 10**6} МБ")
-print(f"Пиковый размер памяти2: {peak2 / 10**6} МБ")
+print(f"Текущий размер памяти при валидации: {current2 / 10**6} МБ")
+print(f"Пиковый размер памяти при валидации: {peak2 / 10**6} МБ")
 
 # Вывод результатов
 classes = ['Circle', 'Square', 'Triangle']
